@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
+using WeatherSimpleApp.Models;
 namespace WeatherSimpleApp
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
@@ -16,7 +16,6 @@ namespace WeatherSimpleApp
         public MainPage()
         {
             InitializeComponent();
-            
         }
     }
 }
