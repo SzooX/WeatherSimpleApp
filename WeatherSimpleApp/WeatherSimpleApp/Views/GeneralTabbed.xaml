@@ -4,15 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="WeatherSimpleApp.GeberalTabbed"
+             x:Class="WeatherSimpleApp.GeneralTabbed"
             xmlns:views="clr-namespace:WeatherSimpleApp"
             Visual="Material"
             >
     <NavigationPage.TitleView>
-
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Label Text="Main Page" HorizontalOptions="Center" TextColor="White" FontSize="Large" FontAttributes="Bold"/>
-
+        <StackLayout>
+            <Label Text="Main Page" TextColor="White" FontSize="28" />
         </StackLayout>
     </NavigationPage.TitleView>
     <!--Pages can be added as references or inline-->

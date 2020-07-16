@@ -14,7 +14,7 @@
   <MasterDetailPage.Detail>
     <NavigationPage>
       <x:Arguments>
-            <pages:GeberalTabbed />
+            <pages:GeneralTabbed />
       </x:Arguments>
     </NavigationPage>
   </MasterDetailPage.Detail>

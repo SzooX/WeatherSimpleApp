@@ -10,8 +10,6 @@
              NavigationPage.HasBackButton="False"
              >
 
-    
-
     <ScrollView>
         <StackLayout BackgroundColor="White">
             <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8">
@@ -19,10 +17,12 @@
                     <Expander.Header >
                         <StackLayout>
                             <Label Text="Temperature"
-                       FontSize="30"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Start"
-                       />
+                                FontSize="30"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                VerticalOptions="Center"  
+                            />
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
@@ -32,27 +32,33 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Text="16C"
-                       FontSize="30"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                       />
+                                <Label Text="Now 16C"
+                                    FontSize="30"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="Center"  
+                                />
                                 <Label Text="Min 12C"
-                       FontSize="26"
-                       FontAttributes="Bold"
-                       Grid.Column="1"
-                       HorizontalOptions="Start"
-                       />
+                                    FontSize="26"
+                                    FontAttributes="Bold"
+                                    Grid.Column="1"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="Center"  
+                                />
                                 <Label Text="Max 12c"
-                       FontSize="26"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Start"
-                        Grid.Column="2"   
-                       />
+                                    FontSize="26"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="Center"  
+                                    Grid.Column="2"   
+                                />
                             </Grid>
                         </StackLayout>
                     </Expander.Header>
-                    <Grid>
+                    <Grid Margin="0,20,0,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -62,32 +68,36 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Temeprature Odczuwalna"
-                       FontSize="22"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                       
-                       />
+                            FontSize="22"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"                      
+                        />
                         <Label Text="Punkty Rosy"
-                       FontSize="22"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                       Grid.Column="1"
-                               VerticalOptions="End"
-                       />
+                            FontSize="22"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"   
+                            Grid.Column="1"
+                        />
                         <Label Text="18C"
-                       FontSize="22"
-                       HorizontalOptions="Center"
-                       Grid.Row="1"
-                       />
+                            FontSize="22"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"   
+                            Grid.Row="1"
+                        />
                         <Label Text="15C"
-                       FontSize="22"
-                       HorizontalOptions="Center"
-                               
-                       Grid.Row="1"
-                       Grid.Column="1"
-                       />
+                            FontSize="22"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"   
+                            Grid.Row="1"
+                            Grid.Column="1"
+                        />
                     </Grid>
-
                 </Expander>
             </Frame>
             <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8">
@@ -95,11 +105,12 @@
                     <Expander.Header >
                         <StackLayout>
                             <Label Text="Warunki Pogodowe"
-                       FontSize="30"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Start"
-                       />
-                            
+                                FontSize="30"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                VerticalOptions="Center"
+                            />                            
                         </StackLayout>
                     </Expander.Header>
                     <Grid Margin="0,20,0,0">
@@ -110,93 +121,105 @@
                             <RowDefinition Height="0.5*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="0.3*"/>
+                            <ColumnDefinition Width="0.3*"/>
+                            <ColumnDefinition Width="0.4*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Szanse opadów"
-                       FontSize="16"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"    
-                               VerticalOptions="Center"
-                       
-                       />
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"                       
+                        />
                         <Label Text="Wilgotność"
-                       FontSize="16"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                               VerticalOptions="Center"
-                       Grid.Column="1"
-                               
-                       /><Label Text="Intensywność opadów"
-                       FontSize="16"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                       HorizontalTextAlignment="Center"
-                       Grid.Column="2"
-                               VerticalOptions="End"
-                               
-                       />
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            Grid.Column="1"                               
+                        />
+                        <Label Text="Intensywność opadów"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            Grid.Column="2"                               
+                        />
                         <Label Text="22%"
-                       FontSize="16"
-                       HorizontalOptions="Center"
-                       Grid.Row="1"
-                       />
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"  
+                            Grid.Row="1"
+                        />
                         <Label Text="80%"
-                       FontSize="16"
-                       HorizontalOptions="Center"
-                       Grid.Row="1"
-                       Grid.Column="1"
-                       /><Label Text="0mm/h"
-                       FontSize="16"
-                       HorizontalOptions="Center"
-                       Grid.Row="1"
-                       Grid.Column="2"
-                       />
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"  
+                            Grid.Row="1"
+                            Grid.Column="1"
+                        />
+                        <Label Text="0mm/h"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"  
+                            Grid.Row="1"
+                            Grid.Column="2"
+                        />
                         <Label Text="Ciśnienie"
-                       FontSize="16"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"    
-                               VerticalOptions="End"
-                       Grid.Row="2"
-                       />
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"  
+                            Grid.Row="2"
+                        />
                         <Label Text="Indeks UV"
-                       FontSize="16"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                               VerticalOptions="End"
-                                Grid.Row="2"
-                       Grid.Column="1"
-                       />
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"  
+                            Grid.Row="2"
+                            Grid.Column="1"
+                        />
                         <Label Text="Zachmurzenie"
-                       FontSize="16"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                                Grid.Row="2"
-                       Grid.Column="2"
-                               VerticalOptions="End"
-                               
-                       /> <Label Text="1014hPa"
-                       FontSize="16"
-                       HorizontalOptions="Center"    
-                               VerticalOptions="End"
-                       Grid.Row="3"
-                       />
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"  
+                        /> 
+                        <Label Text="1014hPa"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"  
+                            Grid.Row="3"
+                        />
                         <Label Text="3 (not bad)"
-                       FontSize="16"
-                       HorizontalOptions="Center"
-                               VerticalOptions="End"
-                                Grid.Row="3"
-                       Grid.Column="1"
-                       />
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"  
+                            Grid.Row="3"
+                            Grid.Column="1"
+                        />
                         <Label Text="81%"
-                       FontSize="16"
-                       HorizontalOptions="Center"
-                                Grid.Row="3"
-                       Grid.Column="2"
-                               VerticalOptions="End"
-                               
-                       />
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"  
+                            Grid.Row="3"
+                            Grid.Column="2"                               
+                        />
                     </Grid>
 
                 </Expander>
@@ -204,50 +227,65 @@
             <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8">
                 <Expander Margin="20,20,20,20">
                     <Expander.Header >
-                        <FlexLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
                             <Label Text="Wiatr"
-                       FontSize="30"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Start"
-                       /><Label Text="26 Km/h" Margin="120,0,0,0"
-                       FontSize="28"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Start"
-                       />
-                            
-                        </FlexLayout>
+                               FontSize="30"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               />
+                             <Label Text="26 Km/h" Margin="0,0,0,0" Grid.Column="1"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               />
+                        </Grid>
                     </Expander.Header>
-                    <Grid>
+                    <Grid Margin="0,20,0,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1.2*"/>
+                            <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Kierunek Wiatru"
-                       FontSize="22"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                       
-                       />
+                            FontSize="22"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"   
+                            HorizontalTextAlignment="Center"                       
+                        />
                         <Label Text="Porywy wiatru"
-                       FontSize="22"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                       Grid.Column="1"
-                       />
+                            FontSize="22"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            Grid.Column="1"
+                        />
                         <Label Text="S(180)"
-                       FontSize="22"
-                       HorizontalOptions="Center"
-                       Grid.Row="1"
-                       />
+                            FontSize="22"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            Grid.Row="1"
+                        />
                         <Label Text="11 Km/h"
-                       FontSize="22"
-                       HorizontalOptions="Center"
-                       Grid.Row="1"
-                       Grid.Column="1"
+                            FontSize="22"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            Grid.Row="1"
+                            Grid.Column="1"
                        />
                     </Grid>
 

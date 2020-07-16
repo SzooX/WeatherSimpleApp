@@ -8,7 +8,7 @@
              Visual="Material"
              Title="Master">
     <StackLayout>
-        <Frame BackgroundColor="#34baeb" Margin="0,0,0,20">
+        <Frame BackgroundColor="#2196F3" Margin="0,0,0,20" CornerRadius="0">
             <Label Text="Locations" TextColor="White" FontSize="28" 
                    FontAttributes="Bold" Margin="0,20,0,0" HorizontalOptions="Center"/>
         </Frame>
