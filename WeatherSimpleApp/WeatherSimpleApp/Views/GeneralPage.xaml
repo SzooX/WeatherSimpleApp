@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="WeatherSimpleApp.GeneralPage"
              xmlns:pages="clr-namespace:WeatherSimpleApp"
+             Visual="Material"
              >
   <MasterDetailPage.Master>
         <pages:GeneralPageMaster x:Name="MasterPage" />
