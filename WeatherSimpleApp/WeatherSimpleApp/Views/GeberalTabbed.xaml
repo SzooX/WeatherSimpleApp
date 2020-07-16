@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="WeatherSimpleApp.GeberalTabbed"
             xmlns:views="clr-namespace:WeatherSimpleApp"
-            
+            Visual="Material"
             >
     <NavigationPage.TitleView>
 
