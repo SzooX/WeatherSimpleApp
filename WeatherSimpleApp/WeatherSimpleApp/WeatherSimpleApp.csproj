@@ -12,16 +12,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="GeberalTabbed.xaml">
+    <EmbeddedResource Update="Views\GeberalTabbed.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="GeneralPage.xaml">
+    <EmbeddedResource Update="Views\GeneralPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="GeneralPageDetail.xaml">
+    <EmbeddedResource Update="Views\GeneralPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="GeneralPageMaster.xaml">
+    <EmbeddedResource Update="Views\GeneralPageMaster.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MasterDetailPage1Detail.xaml">
@@ -33,5 +33,10 @@
     <EmbeddedResource Update="MasterPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
 </Project>
