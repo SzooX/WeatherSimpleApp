@@ -6,4 +6,15 @@
              mc:Ignorable="d"
              x:Class="WeatherSimpleApp.App">
 
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LastCountries" TargetType="Button">
+                <Setter Property="Margin" Value="10,0,10,0"/>
+                <Setter Property="FontSize" Value="17"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="BackgroundColor" Value="#303030"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+
 </Application>

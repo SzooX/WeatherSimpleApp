@@ -12,7 +12,10 @@
 
     
 
-    <ScrollView>        <StackLayout BackgroundColor="White">            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8">                <Expander Margin="20,20,20,20">
+    <ScrollView>
+        <StackLayout BackgroundColor="White">
+            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8">
+                <Expander Margin="20,20,20,20">
                     <Expander.Header >
                         <StackLayout>
                             <Label Text="Temperature"
@@ -85,7 +88,10 @@
                        />
                     </Grid>
 
-                </Expander>            </Frame>            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8">                <Expander Margin="20,20,20,20">
+                </Expander>
+            </Frame>
+            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8">
+                <Expander Margin="20,20,20,20">
                     <Expander.Header >
                         <StackLayout>
                             <Label Text="Warunki Pogodowe"
@@ -193,7 +199,10 @@
                        />
                     </Grid>
 
-                </Expander>            </Frame>            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8">                <Expander Margin="20,20,20,20">
+                </Expander>
+            </Frame>
+            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8">
+                <Expander Margin="20,20,20,20">
                     <Expander.Header >
                         <FlexLayout>
                             <Label Text="Wiatr"
@@ -242,7 +251,11 @@
                        />
                     </Grid>
 
-                </Expander>            </Frame>        </StackLayout>               
+                </Expander>
+            </Frame>
+        </StackLayout>
+        
+       
 
     </ScrollView>
 </ContentPage>

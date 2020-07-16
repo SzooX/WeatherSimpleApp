@@ -20,9 +20,6 @@ namespace WeatherSimpleApp
         public GeneralPageMaster()
         {
             InitializeComponent();
-
-            BindingContext = new GeneralPageMasterViewModel();
-            ListView = MenuItemsListView;
         }
 
         class GeneralPageMasterViewModel : INotifyPropertyChanged
