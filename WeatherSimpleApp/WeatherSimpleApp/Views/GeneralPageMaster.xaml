@@ -5,39 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="WeatherSimpleApp.GeneralPageMaster"
+             Visual="Material"
              Title="Master">
-  <StackLayout>
-    <ListView x:Name="MenuItemsListView"
-              SeparatorVisibility="None"
-              HasUnevenRows="true"
-              ItemsSource="{Binding MenuItems}">
-      <d:ListView.ItemsSource>
-          <x:Array Type="{x:Type x:String}">
-              <x:String>Page 1</x:String>
-              <x:String>Page 2</x:String>
-              <x:String>Page 3</x:String>
-              <x:String>Page 4</x:String>
-              <x:String>Page 5</x:String>
-          </x:Array>
-      </d:ListView.ItemsSource>
-      <ListView.Header >
-                <StackLayout BackgroundColor="#2196F3">
-                    <Label Text="Locations" TextColor="White" FontSize="26" Margin="5,20,5,10" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
-                </StackLayout>
-      </ListView.Header>
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
-              <Label VerticalOptions="FillAndExpand" 
-                    VerticalTextAlignment="Center" 
-                    Text="{Binding Title}" 
-                    d:Text="{Binding .}"
-                    FontSize="24"/>
-            </StackLayout>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
-  </StackLayout>
+    <StackLayout>
+        <Frame BackgroundColor="#34baeb" Margin="0,0,0,20">
+            <Label Text="Locations" TextColor="White" FontSize="28" 
+                   FontAttributes="Bold" Margin="0,20,0,0" HorizontalOptions="Center"/>
+        </Frame>
+        <SearchBar Placeholder="New York" Margin="0,0,10,20"/>
+        <Button Text="Country 1" Style="{StaticResource LastCountries}"/>
+        <Button Text="Country 2" Style="{StaticResource LastCountries}"/>
+        <Button Text="Country 3" Style="{StaticResource LastCountries}"/>
+    </StackLayout>
 </ContentPage>
