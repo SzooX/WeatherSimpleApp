@@ -13,9 +13,26 @@ namespace WeatherSimpleApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        WeatherClient wc = new WeatherClient();
         public MainPage()
         {
             InitializeComponent();
+            //testmethod();
+            //testmethod2();
+            testmethod3();
+        }
+        //Example methods of receiving data about weather
+        async public void testmethod()
+        {
+            ActualData data = await wc.GetWeatherActual("Kraków");
+        }
+        async public void testmethod2()
+        {
+            HourlyData data = await wc.GetWeatherHourly("Kraków");
+        }
+        async public void testmethod3()
+        {
+            DailyData data = await wc.GetWeatherDaily("Kraków");    
         }
     }
 }
