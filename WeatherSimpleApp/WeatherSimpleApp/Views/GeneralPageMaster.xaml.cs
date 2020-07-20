@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using WeatherSimpleApp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,8 +17,15 @@ namespace WeatherSimpleApp
     {
         public ListView ListView;
 
+        public Command SearchCommand;
+
         public GeneralPageMaster()
         {
+            SearchCommand = new Command(() => {
+                GlobalVariables.currentCountry = CountrySearchBar.Text;
+                MainPage.Instance.SetLoadingIndivator(true);
+                MainPage.Instance?.UpdateWeather();
+            });
             InitializeComponent();
         }
 
