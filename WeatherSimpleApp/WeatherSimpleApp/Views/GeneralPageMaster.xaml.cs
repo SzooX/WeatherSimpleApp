@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using WeatherSimpleApp.Models;
+using WeatherSimpleApp.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,17 +17,11 @@ namespace WeatherSimpleApp
     public partial class GeneralPageMaster : ContentPage
     {
         public ListView ListView;
-
-        public Command SearchCommand;
-
         public GeneralPageMaster()
         {
-            SearchCommand = new Command(() => {
-                GlobalVariables.currentCountry = CountrySearchBar.Text;
-                MainPage.Instance.SetLoadingIndivator(true);
-                MainPage.Instance?.UpdateWeather();
-            });
             InitializeComponent();
+
+            BindingContext = this;
         }
 
         class GeneralPageMasterViewModel : INotifyPropertyChanged
@@ -55,6 +50,14 @@ namespace WeatherSimpleApp
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
             #endregion
+        }
+
+        private void CountrySearchBar_SearchButtonPressed(object sender, EventArgs e)
+        {
+            GlobalVariables.currentCountry = CountrySearchBar.Text;
+            GeneralPage.Instance.IsPresented = false;
+            MainPage.Instance.SetLoadingIndivator(true);
+            MainPage.Instance.UpdateWeather();
         }
     }
 }

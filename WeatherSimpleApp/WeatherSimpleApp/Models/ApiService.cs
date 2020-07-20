@@ -33,6 +33,10 @@ namespace WeatherSimpleApp.Models
                     string content = await response.Content.ReadAsStringAsync();
                     data = JsonConvert.DeserializeObject<ActualData>(content);
                 }
+                else
+                {
+                    Console.WriteLine($"ERROR --------------- {GlobalVariables.currentCountry}");
+                }
             }
             catch (Exception ex)
             {

@@ -77,7 +77,7 @@
                             HorizontalTextAlignment="Center"
                             VerticalOptions="Center"     
                         />
-                        <Label Text="Punkty Rosy"
+                        <Label Text="BlankField"
                             FontSize="22"
                             FontAttributes="Bold"
                             HorizontalOptions="Center"
@@ -93,7 +93,7 @@
                             Grid.Row="1"
                             x:Name="Temperature_feel"
                         />
-                        <Label Text="15C"
+                        <Label Text="---"
                             FontSize="22"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"

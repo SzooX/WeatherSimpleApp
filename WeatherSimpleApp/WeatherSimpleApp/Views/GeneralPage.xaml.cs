@@ -12,8 +12,10 @@ namespace WeatherSimpleApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GeneralPage : MasterDetailPage
     {
+        public static GeneralPage Instance;
         public GeneralPage()
         {
+            if (Instance == null) Instance = this;
             InitializeComponent();
         }
     }

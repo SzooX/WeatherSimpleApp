@@ -65,10 +65,10 @@ namespace WeatherSimpleApp
         public async void UpdateWeather()
         {
             ActualData data = await wc.GetWeatherActual(GlobalVariables.currentCountry);
-            Temperature_now.Text = data.main.temp + "55&#186;C";
-            Temperature_min.Text = data.main.temp_min + "55&#186;C";
-            Temperature_max.Text = data.main.temp_max + "55&#186;C";
-            Temperature_feel.Text = data.main.feels_like + "55&#186;C";
+            Temperature_now.Text = "Now\r" + Math.Round(data.main.temp) + "°C";
+            Temperature_min.Text = "Min\r" + Math.Round(data.main.temp_min) + "°C";
+            Temperature_max.Text = "Max\r" + Math.Round(data.main.temp_max) + "°C";
+            Temperature_feel.Text = Math.Round(data.main.feels_like) + "°C";
             SetLoadingIndivator(false);
             EnableCountryView();
         }
