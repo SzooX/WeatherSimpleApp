@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using WeatherSimpleApp.Models;
-using WeatherSimpleApp.ViewModel;
+using WeatherSimpleApp;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -56,7 +56,7 @@ namespace WeatherSimpleApp
         {
             GlobalVariables.currentCountry = CountrySearchBar.Text;
             GeneralPage.Instance.IsPresented = false;
-            MainPage.Instance.SetLoadingIndivator(true);
+            MainPage.Instance.SetLoadingIndicator(true);
             MainPage.Instance.UpdateWeather();
         }
     }

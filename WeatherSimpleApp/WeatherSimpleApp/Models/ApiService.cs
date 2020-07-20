@@ -35,7 +35,8 @@ namespace WeatherSimpleApp.Models
                 }
                 else
                 {
-                    Console.WriteLine($"ERROR --------------- {GlobalVariables.currentCountry}");
+                    Console.WriteLine($"ERROR");
+                    return null;
                 }
             }
             catch (Exception ex)

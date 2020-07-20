@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using WeatherSimpleApp;
 
 namespace WeatherSimpleApp
 {
@@ -26,6 +27,8 @@ namespace WeatherSimpleApp
         protected override void OnResume()
         {
             // Handle when your app resumes
+            // TODO: Load last country
+            WeatherSimpleApp.MainPage.Instance?.UpdateWeather();
         }
     }
 }

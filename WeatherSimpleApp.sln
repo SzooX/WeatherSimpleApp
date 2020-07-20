@@ -5,7 +5,12 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherSimpleApp.Android", "WeatherSimpleApp\WeatherSimpleApp.Android\WeatherSimpleApp.Android.csproj", "{F1BF323A-54BE-47EF-8E94-19CB268C71DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherSimpleApp", "WeatherSimpleApp\WeatherSimpleApp\WeatherSimpleApp.csproj", "{16C0B235-AEB6-40E8-924E-E7DC16F8ACAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherSimpleApp", "WeatherSimpleApp\WeatherSimpleApp\WeatherSimpleApp.csproj", "{16C0B235-AEB6-40E8-924E-E7DC16F8ACAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76EB7DF1-08AA-4B8A-891C-C2778F26A1EE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
