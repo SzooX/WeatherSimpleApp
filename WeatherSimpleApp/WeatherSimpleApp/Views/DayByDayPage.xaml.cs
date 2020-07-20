@@ -15,6 +15,7 @@ namespace WeatherSimpleApp
         public DayByDayPage()
         {
             InitializeComponent();
+            BindingContext = new DailyViewModel();
         }
     }
 }

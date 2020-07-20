@@ -9,72 +9,18 @@
              NavigationPage.HasBackButton="False">
 
     <StackLayout>
-        <Frame>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Monday, 22 July, 2020"
-                       FontSize="Large"
-                       Grid.ColumnSpan="3"
-                          />
-                <Label Text="Temperature"
-                       Grid.Row="1"
-                       HorizontalOptions="Center"/>
-                <Label Text="Conditions"
-                       Grid.Row="1"
-                       Grid.Column="1"
-                       HorizontalOptions="Center"/>
-                <Label Text="Rain"
-                       Grid.Row="1"
-                       Grid.Column="2"
-                       HorizontalOptions="Center"/>
-                <Label Text="25C"
-                       Grid.Row="2"
-                       Grid.Column="0"
-                       HorizontalOptions="Center"/>
-                <Label Text="Cloudy"
-                       Grid.Row="2"
-                       Grid.Column="1"
-                       HorizontalOptions="Center"/>
-                <Label Text="55%"
-                       Grid.Row="2"
-                       Grid.Column="2"
-                       HorizontalOptions="Center"/>
-                <Label Text="Wind"
-                       Grid.Row="3"
-                       Grid.Column="0"
-                       HorizontalOptions="Center"/>
-                <Label Text="Sunrise"
-                       Grid.Row="3"
-                       Grid.Column="1"
-                       HorizontalOptions="Center"/>
-                <Label Text="Sunset"
-                       Grid.Row="3"
-                       Grid.Column="2"
-                       HorizontalOptions="Center"/>
-                <Label Text="11Km/h"
-                       Grid.Row="4"
-                       Grid.Column="0"
-                       HorizontalOptions="Center"/>
-                <Label Text="4:28 AM"
-                       Grid.Row="4"
-                       Grid.Column="1"
-                       HorizontalOptions="Center"/>
-                <Label Text="23:17 PM"
-                       Grid.Row="4"
-                       Grid.Column="2"
-                       HorizontalOptions="Center"/>
-            </Grid>
-        </Frame>
+        <Label Text="{Binding TestText}"/>
+        <ListView ItemsSource="{Binding BasicList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="hello"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
     </StackLayout>
 </ContentPage>
