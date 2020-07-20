@@ -16,10 +16,12 @@ namespace WeatherSimpleApp
         WeatherClient wc = new WeatherClient();
         public MainPage()
         {
-            InitializeComponent();
             //testmethod();
             //testmethod2();
-            testmethod3();
+            //testmethod3();
+            InitializeComponent();
+            
+           
         }
         //Example methods of receiving data about weather
         async public void testmethod()
@@ -32,7 +34,7 @@ namespace WeatherSimpleApp
         }
         async public void testmethod3()
         {
-            DailyData data = await wc.GetWeatherDaily("Kraków");    
+            DailyData data = await wc.GetWeatherDaily("Kraków");
         }
     }
 }

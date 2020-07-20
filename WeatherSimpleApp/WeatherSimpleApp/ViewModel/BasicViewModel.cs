@@ -6,5 +6,6 @@ namespace WeatherSimpleApp.ViewModel
 {
     class BasicViewModel
     {
+
     }
 }
