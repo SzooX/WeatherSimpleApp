@@ -35,6 +35,7 @@ namespace WeatherSimpleApp
         async public void testmethod3()
         {
             DailyData data = await wc.GetWeatherDaily("Kraków");
+            TimeConverter.UnixTimeStampToDateTime(data.daily[0].sunrise, data.timezone);
         }
     }
 }

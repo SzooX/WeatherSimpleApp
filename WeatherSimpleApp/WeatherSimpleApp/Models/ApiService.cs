@@ -23,7 +23,6 @@ namespace WeatherSimpleApp.Models
         {
 
             var data = new ActualData();
-            
             try
             {
                 HttpResponseMessage response = await _client.GetAsync(uri);
