@@ -21,19 +21,22 @@ namespace WeatherSimpleApp.Models
         //API call funtions
         public async Task<ActualData> GetWeatherDataAsyncActual(string uri)
         {
-
+            Console.WriteLine("Starting API Request");
             var data = new ActualData();
             try
             {
+                Console.WriteLine("Sending API Request");
                 HttpResponseMessage response = await _client.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                 {
+                    Console.WriteLine("Succes API Request");
                     string content = await response.Content.ReadAsStringAsync();
                     data = JsonConvert.DeserializeObject<ActualData>(content);
                 }
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Fail API Request");
                 Debug.WriteLine("\tERROR {0}", ex.Message);
             }
 

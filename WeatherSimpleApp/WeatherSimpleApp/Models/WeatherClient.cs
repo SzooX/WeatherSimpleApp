@@ -24,6 +24,7 @@ namespace WeatherSimpleApp.Models
         {
             ActualData _data = null;
             _data = await AS.GetWeatherDataAsyncActual(GenerateRequestUri(Constants.OpenWeatherMapEndpoint_actual, city));
+            Console.WriteLine("Received data from API!");
             return _data;
         }
         /// <summary>
