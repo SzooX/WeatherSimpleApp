@@ -11,6 +11,7 @@
     <ContentPage.Content>
 
         <StackLayout>
+            <ActivityIndicator IsVisible="{Binding LoadingIndicator}" IsRunning="{Binding LoadingIndicator}" Margin="20"/>
             <Label Text="No daily data avaiable, choose city or try again later!" 
                    HorizontalOptions="Center" 
                    HorizontalTextAlignment="Center" 

@@ -48,6 +48,11 @@ namespace WeatherSimpleApp
                 noPlaceSetted = value;
                 OnPropertyChanged();
             }}
+        bool loadingIndicator{ get; set; }
+        public bool LoadingIndicator { get => loadingIndicator; set{
+                loadingIndicator = value;
+                OnPropertyChanged();
+            }}
         
         #endregion
 
@@ -56,17 +61,20 @@ namespace WeatherSimpleApp
             if (Instance == null) Instance = this;
             BasicList = new ObservableCollection<DailyDatum>();
             NoPlaceSetted = true;
+            LoadingIndicator = false;
         }
         public async void UpdateWeather()
         {
             BasicList = new ObservableCollection<DailyDatum>();
+            
             // If no country set, return
             if (string.IsNullOrEmpty(GlobalVariables.currentCountry))
             {
-                // todo hide data
+                
                 return;
             }
             NoPlaceSetted = false;
+            LoadingIndicator = true;
             DailyD = await WC.GetWeatherDaily(GlobalVariables.currentCountry);
             foreach (Daily x in DailyD.daily)
             {
@@ -80,6 +88,7 @@ namespace WeatherSimpleApp
                 na.Date = $"{TimeConverter.UnixTimeStampToDateTime(x.sunset, DailyD.timezone).DayOfWeek}";
                 BasicList.Add(na);
             }
+            LoadingIndicator = false;
         }
         string GetHourString(double unittime, string zname)
         {

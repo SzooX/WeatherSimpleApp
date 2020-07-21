@@ -11,7 +11,7 @@
             >
     <NavigationPage.TitleView>
         <StackLayout>
-            <Label Text="Main Page" TextColor="White" FontSize="28" />
+            <Label FormattedText="Weather App! (SIMPLE EDITION)" TextColor="White" FontSize="20" />
         </StackLayout>
     </NavigationPage.TitleView>
     <!--Pages can be added as references or inline-->
