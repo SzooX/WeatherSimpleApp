@@ -58,6 +58,7 @@ namespace WeatherSimpleApp
             GeneralPage.Instance.IsPresented = false;
             MainPage.Instance.SetLoadingIndicator(true);
             MainPage.Instance.UpdateWeather();
+            DailyViewModel.Instance.UpdateWeather();
         }
     }
 }

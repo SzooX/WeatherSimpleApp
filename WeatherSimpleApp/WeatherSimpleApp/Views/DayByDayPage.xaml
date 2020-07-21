@@ -8,19 +8,99 @@
              NavigationPage.HasNavigationBar="False" 
              NavigationPage.HasBackButton="False">
 
-    <StackLayout>
-        <Label Text="{Binding TestText}"/>
-        <ListView ItemsSource="{Binding BasicList}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                            <Label Text="hello"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        
-    </StackLayout>
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Label Text="No daily data avaiable, choose city or try again later!" 
+                   HorizontalOptions="Center" 
+                   HorizontalTextAlignment="Center" 
+                   FontSize="Title" FontAttributes="Bold"
+                   Margin="20"
+                   IsVisible="{Binding NoPlaceSetted}"/>
+            <ListView ItemsSource="{Binding BasicList}"
+                  HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="200">
+                            <Frame>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Date}"
+                                       FontAttributes="Bold"
+                       FontSize="Large"
+                       Grid.ColumnSpan="3"
+                          />
+                                    <Label Text="Temperature"
+                       FontAttributes="Bold"
+                       Grid.Row="1"
+                       HorizontalOptions="Center"/>
+                                    <Label Text="Conditions"
+                                       FontAttributes="Bold"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"/>
+                                    <Label Text="Rain"
+                                       FontAttributes="Bold"
+                       Grid.Row="1"
+                       Grid.Column="2"
+                       HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Temeperature}"
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Conditions}"
+                       Grid.Row="2"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Rain}"
+                       Grid.Row="2"
+                       Grid.Column="2"
+                       HorizontalOptions="Center"/>
+                                    <Label Text="Wind"
+                                       FontAttributes="Bold"
+                       Grid.Row="3"
+                       Grid.Column="0"
+                       HorizontalOptions="Center"/>
+                                    <Label Text="Sunrise"
+                                       FontAttributes="Bold"
+                       Grid.Row="3"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"/>
+                                    <Label Text="Sunset"
+                                       FontAttributes="Bold"
+                       Grid.Row="3"
+                       Grid.Column="2"
+                       HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Wind}"
+                       Grid.Row="4"
+                       Grid.Column="0"
+                       HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Sunrise}"
+                       Grid.Row="4"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Sunset}"
+                       Grid.Row="4"
+                       Grid.Column="2"
+                       HorizontalOptions="Center"/>
+                                </Grid>
+                            </Frame>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
