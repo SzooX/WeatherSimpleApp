@@ -55,37 +55,20 @@ namespace WeatherSimpleApp
         private void CountrySearchBar_SearchButtonPressed(object sender, EventArgs e)
         {
             GlobalVariables.currentCountry = CountrySearchBar.Text;
+            RaiseWeatherRequest();
+        }
+        private void ButtonClick(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            GlobalVariables.currentCountry = btn.Text;
+            RaiseWeatherRequest();
+        }
+        void RaiseWeatherRequest()
+        {
             GeneralPage.Instance.IsPresented = false;
             MainPage.Instance.SetLoadingIndicator(true);
             MainPage.Instance.UpdateWeather();
             DailyViewModel.Instance.UpdateWeather();
-        }
-
-        private void CountryButton1_Pressed(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            GlobalVariables.currentCountry = btn.Text;
-            GeneralPage.Instance.IsPresented = false;
-            MainPage.Instance.SetLoadingIndicator(true);
-            MainPage.Instance.UpdateWeather();
-        }
-
-        private void CountryButton2_Pressed(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            GlobalVariables.currentCountry = btn.Text;
-            GeneralPage.Instance.IsPresented = false;
-            MainPage.Instance.SetLoadingIndicator(true);
-            MainPage.Instance.UpdateWeather();
-        }
-
-        private void CountryButton3_Pressed(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            GlobalVariables.currentCountry = btn.Text;
-            GeneralPage.Instance.IsPresented = false;
-            MainPage.Instance.SetLoadingIndicator(true);
-            MainPage.Instance.UpdateWeather();
         }
     }
 }

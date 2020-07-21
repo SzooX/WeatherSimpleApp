@@ -59,6 +59,7 @@ namespace WeatherSimpleApp
         }
         public async void UpdateWeather()
         {
+            BasicList = new ObservableCollection<DailyDatum>();
             // If no country set, return
             if (string.IsNullOrEmpty(GlobalVariables.currentCountry))
             {
