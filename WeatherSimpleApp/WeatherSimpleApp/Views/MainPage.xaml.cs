@@ -18,7 +18,6 @@ namespace WeatherSimpleApp
         ActualData data;
         public MainPage()
         {
-
             // TODO: Load last selected country
 
 
@@ -35,20 +34,6 @@ namespace WeatherSimpleApp
                 ShowData();
             }
            
-        }
-        //Example methods of receiving data about weather
-        async public void testmethod()
-        {
-            ActualData data = await wc.GetWeatherActual("Kraków");
-        }
-        async public void testmethod2()
-        {
-            HourlyData data = await wc.GetWeatherHourly("Kraków");
-        }
-        async public void testmethod3()
-        {
-            DailyData data = await wc.GetWeatherDaily("Kraków");
-            TimeConverter.UnixTimeStampToDateTime(data.daily[0].sunrise, data.timezone);
         }
 
         public async void UpdateWeather()
@@ -114,16 +99,27 @@ namespace WeatherSimpleApp
 
         async void RotateDirectionImage()
         {
-            var rotaton = data.wind.deg;
+            if(data != null)
+            {
+                var rotaton = data.wind.deg;
 
-            // Calculate direction of rotation
-            if (rotaton > 180) rotaton = (360 - rotaton) * -1;
+                // Calculate direction of rotation
+                if (rotaton > 180) rotaton = (360 - rotaton) * -1;
 
 
-            // Rotate direction image (custom animation)
-            await Wind_direction.RotateTo(rotaton + (rotaton > 0 ? 15 : -15), 450);
-            await Wind_direction.RotateTo(rotaton + (rotaton > 0 ? -10 : 10), 900);
-            await Wind_direction.RotateTo(rotaton, 1000);
+                // Rotate direction image (custom animation)
+                await Wind_direction.RotateTo(rotaton + (rotaton > 0 ? 15 : -15), 450);
+                await Wind_direction.RotateTo(rotaton + (rotaton > 0 ? -10 : 10), 900);
+                await Wind_direction.RotateTo(rotaton, 1000);
+            }
+            else
+            {
+                while(data == null)
+                {
+                    Random _random = new Random();
+                    await Wind_direction.RotateTo(_random.Next(360), 1000);
+                }
+            }
         }
 
         public void HideData()
