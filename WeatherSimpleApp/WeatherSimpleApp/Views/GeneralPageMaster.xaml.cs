@@ -17,13 +17,13 @@ namespace WeatherSimpleApp
     public partial class GeneralPageMaster : ContentPage
     {
         public ListView ListView;
+        LastCountries lastCountries = new LastCountries();
         public GeneralPageMaster()
         {
             InitializeComponent();
 
             BindingContext = this;
         }
-
         class GeneralPageMasterViewModel : INotifyPropertyChanged
         {
             public ObservableCollection<GeneralPageMasterMenuItem> MenuItems { get; set; }
@@ -59,6 +59,33 @@ namespace WeatherSimpleApp
             MainPage.Instance.SetLoadingIndicator(true);
             MainPage.Instance.UpdateWeather();
             DailyViewModel.Instance.UpdateWeather();
+        }
+
+        private void CountryButton1_Pressed(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            GlobalVariables.currentCountry = btn.Text;
+            GeneralPage.Instance.IsPresented = false;
+            MainPage.Instance.SetLoadingIndicator(true);
+            MainPage.Instance.UpdateWeather();
+        }
+
+        private void CountryButton2_Pressed(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            GlobalVariables.currentCountry = btn.Text;
+            GeneralPage.Instance.IsPresented = false;
+            MainPage.Instance.SetLoadingIndicator(true);
+            MainPage.Instance.UpdateWeather();
+        }
+
+        private void CountryButton3_Pressed(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            GlobalVariables.currentCountry = btn.Text;
+            GeneralPage.Instance.IsPresented = false;
+            MainPage.Instance.SetLoadingIndicator(true);
+            MainPage.Instance.UpdateWeather();
         }
     }
 }

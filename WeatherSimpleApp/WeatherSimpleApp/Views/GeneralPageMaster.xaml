@@ -14,8 +14,8 @@
                    FontAttributes="Bold" Margin="0,20,0,0" HorizontalOptions="Center"/>
         </Frame>
         <SearchBar Placeholder="New York" Margin="0,0,10,20" SearchButtonPressed="CountrySearchBar_SearchButtonPressed" x:Name="CountrySearchBar"/>
-        <Button Text="Country 1" Style="{StaticResource LastCountries}"/>
-        <Button Text="Country 2" Style="{StaticResource LastCountries}"/>
-        <Button Text="Country 3" Style="{StaticResource LastCountries}"/>
+        <Button Text="Kraków" x:Name="Btn1" Style="{StaticResource LastCountries}" Pressed="CountryButton1_Pressed"/>
+        <Button Text="Tokyo" x:Name="Btn2" Style="{StaticResource LastCountries}" Pressed="CountryButton2_Pressed"/>
+        <Button Text="New York" x:Name="Btn3" Style="{StaticResource LastCountries}" Pressed="CountryButton3_Pressed"/>
     </StackLayout>
 </ContentPage>
