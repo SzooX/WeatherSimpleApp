@@ -114,7 +114,7 @@ namespace WeatherSimpleApp
             }
             else
             {
-                while(data == null)
+                while(data == null && WindExpander.IsExpanded)
                 {
                     Random _random = new Random();
                     await Wind_direction.RotateTo(_random.Next(360), 1000);
