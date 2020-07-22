@@ -12,16 +12,17 @@
 
     <ScrollView x:Name="Scroll">
 
-        <StackLayout>
-            <ActivityIndicator x:Name="LoadingIndicator" IsVisible="false" IsRunning="False" Margin="20"/>
+        <StackLayout BackgroundColor="#505050">
+            <ActivityIndicator x:Name="LoadingIndicator" IsVisible="false" IsRunning="False" Margin="20" Color="White"/>
             <Label Text="I couldn't find this place :(" x:Name="Error" 
                    IsVisible="false" 
                    FontSize="23" 
                    HorizontalOptions="Center" 
                    HorizontalTextAlignment="Center"
                    Margin="10,30,10,10"
+                   TextColor="White"
             />
-            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8" x:Name="TemperatureBox" IsEnabled="True" IsVisible="True">
+            <Frame Margin="5,20,5,5" BorderColor="Orange" BackgroundColor="#707070" HasShadow="false" Padding="8" x:Name="TemperatureBox" IsEnabled="True" IsVisible="True">
                 <Expander Margin="20,20,20,20">
                     <Expander.Header >
                         <StackLayout>
@@ -42,6 +43,7 @@
                                 HorizontalTextAlignment="Center"
                                 VerticalOptions="Center"  
                                 Grid.ColumnSpan="2"
+                                TextColor="White"
                             />
                                 <Label Text="16C"
                                     FontSize="30"
@@ -51,6 +53,7 @@
                                     VerticalOptions="Center"  
                                     x:Name="Temperature_now"
                                     FontAttributes="Bold"
+                                    TextColor="#fcbe03"
                                 />
                                 
                             </Grid>
@@ -73,6 +76,7 @@
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             VerticalOptions="Center"     
+                            TextColor="White"
                         />
                         <Label Text="Max"
                             FontSize="22"
@@ -81,6 +85,7 @@
                             HorizontalTextAlignment="Center"
                             VerticalOptions="Center"   
                             Grid.Column="1"
+                            TextColor="White"
                         /><Label Text="Feels Like"
                             FontSize="22"
                             FontAttributes="Bold"
@@ -88,6 +93,7 @@
                             HorizontalTextAlignment="Center"
                             VerticalOptions="Center"   
                             Grid.Column="2"
+                            TextColor="White"
                         />
                         <Label Text="12C"
                             FontSize="22"
@@ -96,6 +102,7 @@
                             HorizontalTextAlignment="Center"
                             VerticalOptions="Center"  
                             x:Name="Temperature_min"
+                            TextColor="#fcbe03"
                         />
                         <Label Text="12c"
                             FontSize="22"
@@ -105,33 +112,36 @@
                             Grid.Row="1"
                             Grid.Column="1"
                             x:Name="Temperature_max"
+                            TextColor="#fcbe03"
                         />
                         <Label Text="18C"
-                                    FontSize="22"
-                                    HorizontalOptions="Center"
-                                    HorizontalTextAlignment="Center"
-                                    VerticalOptions="Center"   
-                                    Grid.Row="1"
-                                    Grid.Column="2"
-                                    x:Name="Temperature_feel"
-                                />
+                            FontSize="22"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"   
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            x:Name="Temperature_feel"
+                            TextColor="#fcbe03"
+                        />
                     </Grid>
                 </Expander>
             </Frame>
-            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8" x:Name="ConditionsBox">
+            <Frame Margin="5,20,5,5" BorderColor="Orange" BackgroundColor="#707070" HasShadow="false" Padding="8" x:Name="ConditionsBox">
                 <Expander Margin="20,20,20,20">
                     <Expander.Header >
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.4*"/>
                             </Grid.ColumnDefinitions>
-                            <Label Text="Weather"
+                            <Label Text="Conditions"
                                 FontSize="30"
                                 FontAttributes="Bold"
                                 HorizontalOptions="Center"
                                 HorizontalTextAlignment="Center"
                                 VerticalOptions="Center"
+                                TextColor="White"
                             />
                             <Image x:Name="WeatherImg"
                                    Grid.Column="1"
@@ -155,7 +165,8 @@
                             FontAttributes="Bold"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
-                            VerticalOptions="Center"                            
+                            VerticalOptions="Center"  
+                            TextColor="White"
                         />
                         <Label Text="80%"
                             FontSize="16"
@@ -164,6 +175,7 @@
                             VerticalOptions="Center"  
                             Grid.Row="1"
                             x:Name="Conditions_humidity"
+                            TextColor="#fcbe03"
                         />
                         <Label Text="Pressure"
                             FontSize="16"
@@ -172,6 +184,7 @@
                             HorizontalTextAlignment="Center"
                             VerticalOptions="Center"  
                             Grid.Column="1"
+                            TextColor="White"
                         />
                         <Label Text="Partly cloudy"
                             FontSize="16"
@@ -180,6 +193,7 @@
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             VerticalOptions="Center"  
+                            TextColor="White"
                         />
                         <Label Text="1014hPa"
                             FontSize="16"
@@ -189,6 +203,7 @@
                             Grid.Row="1"
                             Grid.Column="1"
                             x:Name="Conditions_pressure"
+                            TextColor="#fcbe03"
                         />
                         <Label Text="81%"
                             FontSize="16"
@@ -197,6 +212,7 @@
                             VerticalOptions="Center"  
                             Grid.Row="3"
                             x:Name="Conditions_cloudy"
+                            TextColor="#fcbe03"
                         />
                         <Label Text="Description"
                             FontSize="16"
@@ -206,6 +222,7 @@
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             VerticalOptions="Center"  
+                            TextColor="White"
                         />
                         <Label Text="Cloudy"
                             FontSize="16"
@@ -215,12 +232,13 @@
                             Grid.Row="3"
                             Grid.Column="1"
                             x:Name="WeatherDescription"
+                            TextColor="#fcbe03"
                         />
                     </Grid>
 
                 </Expander>
             </Frame>
-            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8" x:Name="WindBox">
+            <Frame Margin="5,20,5,5" BorderColor="Orange" BackgroundColor="#707070" HasShadow="false" Padding="8" x:Name="WindBox">
                 <Expander Margin="20,20,20,20" Tapped="WindExpander_Tapped" x:Name="WindExpander">
                     <Expander.Header >
                         <Grid>
@@ -235,6 +253,7 @@
                                     FontAttributes="Bold"
                                     HorizontalOptions="Center"
                                     HorizontalTextAlignment="Center"
+                                    TextColor="White"
                                />
                              <Label Text="26 Km/h" Margin="0,0,0,0" Grid.Column="1"
                                     FontSize="28"
@@ -242,6 +261,7 @@
                                     HorizontalTextAlignment="Center"
                                     FontAttributes="Bold"
                                     x:Name="Wind_speed"
+                                    TextColor="#fcbe03"
                                />
                         </Grid>
                     </Expander.Header>
@@ -258,7 +278,8 @@
                             FontAttributes="Bold"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"   
-                            HorizontalTextAlignment="Center"  
+                            HorizontalTextAlignment="Center" 
+                            TextColor="White"
                         />
                         <Image Source="direction.png"  Scale="0.6" Grid.Column="1" x:Name="Wind_direction" />
                     </Grid>
@@ -270,7 +291,9 @@
                    VerticalOptions="CenterAndExpand"
                    HorizontalTextAlignment="Center" 
                    FontSize="Title" FontAttributes="Bold"
-                   Margin="20" />
+                   Margin="20" 
+                   TextColor="White"
+                   />
         </StackLayout>
         
        
