@@ -41,8 +41,13 @@
                                     <Label Text="{Binding Date}"
                                        FontAttributes="Bold"
                        FontSize="Large"
-                       Grid.ColumnSpan="3"
+                       Grid.ColumnSpan="2"
                           />
+                                    <Image Source="{Binding Weather}"
+                                   Grid.Column="2"
+                                           VerticalOptions="CenterAndExpand"
+                                           Scale="3"
+                                   />
                                     <Label Text="Temperature"
                        FontAttributes="Bold"
                        Grid.Row="1"

@@ -77,7 +77,7 @@ namespace WeatherSimpleApp
                 Conditions_cloudy.Text = data.clouds.all + "%";
                 WeatherDescription.Text = data.weather[0].main;
                 Wind_speed.Text = (int)(3.6 * data.wind.speed) + "Km/h";
-                WeatherImg.Source = GetImage(data.weather[0].description);
+                WeatherImg.Source = GetImage(data.weather[0].description, data.weather[0].main);
                 WeatherDescription.Text = data.weather[0].description;
             }
 
@@ -88,50 +88,63 @@ namespace WeatherSimpleApp
             // Check is Wind expander opened, if yes rotate direction image
             if (WindExpander.IsExpanded) RotateDirectionImage();
         }
-
-        private string GetImage(string conditions)
+        /// <summary>
+        /// Function to get correct image to given weather conditions
+        /// </summary>
+        /// <param name="conditions"></param>
+        /// <param name="main"></param>
+        /// <returns>image name</returns>
+        public static string GetImage(string conditions, string main)
         {
-            switch (conditions)
+            switch (main)
             {
-                case "clear sky":
-                    {
-                        return "w01d.png";
-                    }
-                case "few clouds ":
-                    {
-                        return "w02d.png";
-                    }
-                case "scattered clouds":
-                    {
-                        return "w03d.png";
-                    }
-                case "broken clouds":
-                    {
-                        return "w04d.png";
-                    }
-                case "shower rain":
-                    {
-                        return "w09d.png";
-                    }
-                case "rain":
-                    {
-                        return "w10d.png";
-                    }
-                case "thunderstorm":
+                case "Thunderstorm":
                     {
                         return "w11d.png";
                     }
-                case "snow":
+                case "Drizzle":
+                    {
+                        return "w09d.png";
+                    }
+                case "Rain":
+                    {
+                        if(conditions == "freezing rain")
+                        {
+                            return "w13d.png";
+                        }else if(conditions == "light intensity shower rain" || conditions == "shower rain" || conditions == "heavy intensity shower rain"|| conditions == "ragged shower rain")
+                        {
+                            return "w09d.png";
+                        }
+                        else
+                        {
+                            return "w10d.png";
+                        }
+                    }
+                case "Snow":
                     {
                         return "w13d.png";
                     }
-                case "mist":
+                case "Clear":
                     {
-                        return "w50d.png";
+                        return "w01d.png";
+                    }
+                case "Clouds":
+                    {
+                        if(conditions == "few clouds")
+                        {
+                            return "w02d.png";
+                        }else if(conditions == "scattered clouds")
+                        {
+                            return "w03d.png";
+                        }else if(conditions == "broken clouds")
+                        {
+                            return "w03d.png";
+                        }else return "w04d.png";
+
                     }
                 default:
                     {
-                        return "error";
+                        return "w50d.png";
                     }
             }
         }

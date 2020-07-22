@@ -18,6 +18,7 @@ namespace WeatherSimpleApp
         public string Wind { get; set; }
         public string Sunrise { get; set; }
         public string Sunset { get; set; }
+        public string Weather { get; set; }
     }
     public class DailyViewModel : INotifyPropertyChanged
     {
@@ -70,13 +71,12 @@ namespace WeatherSimpleApp
             // If no country set, return
             if (string.IsNullOrEmpty(GlobalVariables.currentCountry))
             {
-                
                 return;
             }
             NoPlaceSetted = false;
             LoadingIndicator = true;
             DailyD = await WC.GetWeatherDaily(GlobalVariables.currentCountry);
-
+            if (DailyD == null) return; // do something
             for (int i = 1; i < DailyD.daily.Length; i++)
             {
                 DailyDatum na = new DailyDatum();
@@ -87,21 +87,9 @@ namespace WeatherSimpleApp
                 na.Sunrise = $"{GetHourString(DailyD.daily[i].sunrise, DailyD.timezone)} AM";
                 na.Sunset = $"{GetHourString(DailyD.daily[i].sunset, DailyD.timezone)} PM";
                 na.Date = $"{TimeConverter.UnixTimeStampToDateTime(DailyD.daily[i].sunset, DailyD.timezone).DayOfWeek}";
+                na.Weather = MainPage.GetImage(DailyD.daily[i].weather[0].description, DailyD.daily[i].weather[0].main);
                 BasicList.Add(na);
             }
-           /* 
-            foreach (Daily x in DailyD.daily)
-            {
-                DailyDatum na = new DailyDatum();
-                na.Temeperature = $"{Math.Round(x.temp.day)}C";
-                na.Conditions = x.weather[0].main;
-                na.Rain = $"{x.rain}mm";
-                na.Wind = $"{x.wind_speed}m/s";
-                na.Sunrise = $"{GetHourString(x.sunrise, DailyD.timezone)} AM";
-                na.Sunset = $"{GetHourString(x.sunset, DailyD.timezone)} PM";
-                na.Date = $"{TimeConverter.UnixTimeStampToDateTime(x.sunset, DailyD.timezone).DayOfWeek}";
-                BasicList.Add(na);
-            }*/
             LoadingIndicator = false;
         }
         string GetHourString(double unittime, string zname)
