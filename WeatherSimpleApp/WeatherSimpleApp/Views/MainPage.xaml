@@ -12,7 +12,7 @@
 
     <ScrollView x:Name="Scroll">
 
-        <StackLayout BackgroundColor="#78d7fa">
+        <StackLayout>
             <ActivityIndicator x:Name="LoadingIndicator" IsVisible="false" IsRunning="False" Margin="20"/>
             <Label Text="I couldn't find this place :(" x:Name="Error" 
                    IsVisible="false" 
@@ -21,7 +21,7 @@
                    HorizontalTextAlignment="Center"
                    Margin="10,30,10,10"
             />
-            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8" x:Name="TemperatureBox" IsEnabled="True" IsVisible="True" BackgroundColor="#2dc5fc">
+            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8" x:Name="TemperatureBox" IsEnabled="True" IsVisible="True">
                 <Expander Margin="20,20,20,20">
                     <Expander.Header >
                         <StackLayout>
@@ -118,7 +118,7 @@
                     </Grid>
                 </Expander>
             </Frame>
-            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8" x:Name="ConditionsBox" BackgroundColor="#2dc5fc">
+            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8" x:Name="ConditionsBox">
                 <Expander Margin="20,20,20,20">
                     <Expander.Header >
                         <Grid>
@@ -220,7 +220,7 @@
 
                 </Expander>
             </Frame>
-            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8" x:Name="WindBox" BackgroundColor="#2dc5fc">
+            <Frame Margin="5,20,5,5" BorderColor="Black" HasShadow="True" Padding="8" x:Name="WindBox">
                 <Expander Margin="20,20,20,20" Tapped="WindExpander_Tapped" x:Name="WindExpander">
                     <Expander.Header >
                         <Grid>
