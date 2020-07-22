@@ -36,6 +36,7 @@ namespace WeatherSimpleApp.Models
         {
             ActualData _data = null;
             _data = await AS.GetWeatherDataAsyncActual(GenerateRequestUri(Constants.OpenWeatherMapEndpoint_actual, city));
+            if (_data == null) return null;
             HourlyData _datum = null;
             _datum = await AS.GetWeatherDataAsyncHourly(GenerateRequestUri(Constants.OpenWeatherMapEndpoint_all, _data.coord.lat.ToString(), _data.coord.lon.ToString(), "daily,minutely,current"));
             return _datum;
@@ -49,6 +50,7 @@ namespace WeatherSimpleApp.Models
         {
             ActualData _data = null;
             _data = await AS.GetWeatherDataAsyncActual(GenerateRequestUri(Constants.OpenWeatherMapEndpoint_actual, city));
+            if (_data == null) return null;
             DailyData _datum = null;
             _datum = await AS.GetWeatherDataAsyncDaily(GenerateRequestUri(Constants.OpenWeatherMapEndpoint_all, _data.coord.lat.ToString(), _data.coord.lon.ToString(), "minutely,current,hourly"));
             return _datum;

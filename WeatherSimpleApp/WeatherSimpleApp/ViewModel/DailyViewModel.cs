@@ -54,6 +54,12 @@ namespace WeatherSimpleApp
                 loadingIndicator = value;
                 OnPropertyChanged();
             }}
+        bool isErrorVisible { get; set; }
+        public bool IsErrorVisible { get => isErrorVisible; set
+            {
+                isErrorVisible = value;
+                OnPropertyChanged();
+            }}
         
         #endregion
 
@@ -63,6 +69,7 @@ namespace WeatherSimpleApp
             BasicList = new ObservableCollection<DailyDatum>();
             NoPlaceSetted = true;
             LoadingIndicator = false;
+            IsErrorVisible = false;
         }
         public async void UpdateWeather()
         {
@@ -76,7 +83,15 @@ namespace WeatherSimpleApp
             NoPlaceSetted = false;
             LoadingIndicator = true;
             DailyD = await WC.GetWeatherDaily(GlobalVariables.currentCountry);
-            if (DailyD == null) return; // do something
+            if (DailyD == null) {
+
+
+                LoadingIndicator = false;
+                IsErrorVisible = true;
+                return;
+
+            }
+            IsErrorVisible = false;
             for (int i = 1; i < DailyD.daily.Length; i++)
             {
                 DailyDatum na = new DailyDatum();

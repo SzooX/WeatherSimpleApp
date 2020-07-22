@@ -286,9 +286,8 @@
 
                 </Expander>
             </Frame>
-            <Label x:Name="NoCountryLabel" Text="No country selected, please select country in menu" 
+            <Label x:Name="NoCountryLabel" Text="No city selected, please select country in menu" 
                    HorizontalOptions="Center"
-                   VerticalOptions="CenterAndExpand"
                    HorizontalTextAlignment="Center" 
                    FontSize="Title" FontAttributes="Bold"
                    Margin="20" 
