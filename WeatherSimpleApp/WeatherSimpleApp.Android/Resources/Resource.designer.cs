@@ -10990,6 +10990,33 @@ namespace WeatherSimpleApp.Droid
 			// aapt resource value: 0x7F070078
 			public const int tooltip_frame_light = 2131165304;
 			
+			// aapt resource value: 0x7F070079
+			public const int w01d = 2131165305;
+			
+			// aapt resource value: 0x7F07007A
+			public const int w02d = 2131165306;
+			
+			// aapt resource value: 0x7F07007B
+			public const int w03d = 2131165307;
+			
+			// aapt resource value: 0x7F07007C
+			public const int w04d = 2131165308;
+			
+			// aapt resource value: 0x7F07007D
+			public const int w09d = 2131165309;
+			
+			// aapt resource value: 0x7F07007E
+			public const int w10d = 2131165310;
+			
+			// aapt resource value: 0x7F07007F
+			public const int w11d = 2131165311;
+			
+			// aapt resource value: 0x7F070080
+			public const int w13d = 2131165312;
+			
+			// aapt resource value: 0x7F070081
+			public const int w50d = 2131165313;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

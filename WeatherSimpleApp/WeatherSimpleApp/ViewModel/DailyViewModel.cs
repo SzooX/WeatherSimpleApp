@@ -76,6 +76,20 @@ namespace WeatherSimpleApp
             NoPlaceSetted = false;
             LoadingIndicator = true;
             DailyD = await WC.GetWeatherDaily(GlobalVariables.currentCountry);
+
+            for (int i = 1; i < DailyD.daily.Length; i++)
+            {
+                DailyDatum na = new DailyDatum();
+                na.Temeperature = $"{Math.Round(DailyD.daily[i].temp.day)}C";
+                na.Conditions = DailyD.daily[i].weather[0].main;
+                na.Rain = $"{DailyD.daily[i].rain}mm";
+                na.Wind = $"{DailyD.daily[i].wind_speed}m/s";
+                na.Sunrise = $"{GetHourString(DailyD.daily[i].sunrise, DailyD.timezone)} AM";
+                na.Sunset = $"{GetHourString(DailyD.daily[i].sunset, DailyD.timezone)} PM";
+                na.Date = $"{TimeConverter.UnixTimeStampToDateTime(DailyD.daily[i].sunset, DailyD.timezone).DayOfWeek}";
+                BasicList.Add(na);
+            }
+           /* 
             foreach (Daily x in DailyD.daily)
             {
                 DailyDatum na = new DailyDatum();
@@ -87,7 +101,7 @@ namespace WeatherSimpleApp
                 na.Sunset = $"{GetHourString(x.sunset, DailyD.timezone)} PM";
                 na.Date = $"{TimeConverter.UnixTimeStampToDateTime(x.sunset, DailyD.timezone).DayOfWeek}";
                 BasicList.Add(na);
-            }
+            }*/
             LoadingIndicator = false;
         }
         string GetHourString(double unittime, string zname)

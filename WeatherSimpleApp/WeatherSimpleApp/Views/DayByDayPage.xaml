@@ -10,11 +10,12 @@
 
     <ContentPage.Content>
 
-        <StackLayout>
+        <StackLayout BackgroundColor="#78d7fa">
             <ActivityIndicator IsVisible="{Binding LoadingIndicator}" IsRunning="{Binding LoadingIndicator}" Margin="20"/>
             <Label Text="No daily data avaiable, choose city or try again later!" 
                    HorizontalOptions="Center" 
                    HorizontalTextAlignment="Center" 
+                   VerticalOptions="CenterAndExpand"
                    FontSize="Title" FontAttributes="Bold"
                    Margin="20"
                    IsVisible="{Binding NoPlaceSetted}"/>
@@ -23,7 +24,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="200">
-                            <Frame>
+                            <Frame BackgroundColor="#2dc5fc">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>

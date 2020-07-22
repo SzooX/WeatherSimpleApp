@@ -75,8 +75,10 @@ namespace WeatherSimpleApp
                 Conditions_humidity.Text = data.main.humidity + "%";
                 Conditions_pressure.Text = data.main.pressure + "hPa";
                 Conditions_cloudy.Text = data.clouds.all + "%";
-
+                WeatherDescription.Text = data.weather[0].main;
                 Wind_speed.Text = (int)(3.6 * data.wind.speed) + "Km/h";
+                WeatherImg.Source = GetImage(data.weather[0].description);
+                WeatherDescription.Text = data.weather[0].description;
             }
 
             // Disable loading indicator and show data
@@ -87,7 +89,52 @@ namespace WeatherSimpleApp
             if (WindExpander.IsExpanded) RotateDirectionImage();
         }
 
-
+        private string GetImage(string conditions)
+        {
+            switch (conditions)
+            {
+                case "clear sky":
+                    {
+                        return "w01d.png";
+                    }
+                case "few clouds ":
+                    {
+                        return "w02d.png";
+                    }
+                case "scattered clouds":
+                    {
+                        return "w03d.png";
+                    }
+                case "broken clouds":
+                    {
+                        return "w04d.png";
+                    }
+                case "shower rain":
+                    {
+                        return "w09d.png";
+                    }
+                case "rain":
+                    {
+                        return "w10d.png";
+                    }
+                case "thunderstorm":
+                    {
+                        return "w11d.png";
+                    }
+                case "snow":
+                    {
+                        return "w13d.png";
+                    }
+                case "mist":
+                    {
+                        return "w50d.png";
+                    }
+                default:
+                    {
+                        return "error";
+                    }
+            }
+        }
         private void WindExpander_Tapped(object sender, EventArgs e)
         {
             if (WindExpander.IsExpanded)
